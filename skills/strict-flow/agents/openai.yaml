@@ -1,0 +1,8 @@
+interface:
+  display_name: "Strict Flow"
+  short_description: "Lightweight three-gate workflow: brainstorm → plan → verify"
+  brand_color: "#10B981"
+  default_prompt: "strict flow"
+
+policy:
+  allow_implicit_invocation: false

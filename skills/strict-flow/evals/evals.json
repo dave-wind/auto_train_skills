@@ -1,0 +1,75 @@
+{
+  "skill_name": "strict-flow",
+  "evals": [
+    {
+      "id": 1,
+      "name": "gate-enforcement-chinese-csv",
+      "prompt": "strict flow: 帮我写个脚本处理 sales_data.csv,这个文件有 date,product,amount 三列,需要过滤出 amount>1000 的行,结果存到 high_value.csv",
+      "expected_output": "完成三个 gate:提出方案并推荐、展示计划、实现后提供证据",
+      "files": [],
+      "expectations": [
+        "提出了至少一种实现方案(pandas/csv模块/其他),并推荐其中一种附带理由",
+        "展示了分步计划(步骤、依赖关系等)",
+        "提供了可验证的证据:代码、执行结果或输出示例",
+        "输出中包含三个 gate 的结构(Gate 1 方案、Gate 2 计划、Gate 3 证据),不是直接给最终代码",
+        "使用中文回复(因为用户用中文提问)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "gate-enforcement-english-refactor",
+      "prompt": "quick flow: refactor this function to use list comprehension instead of for loop\n\ndef filter_items(items):\n    result = []\n    for item in items:\n        if item > 10:\n            result.append(item * 2)\n    return result",
+      "expected_output": "英文交互,完成三个 gate,最后提供重构后的代码和验证证据",
+      "files": [],
+      "expectations": [
+        "proposed at least one refactoring approach with a recommendation or rationale",
+        "presented a step-by-step plan before implementing",
+        "provided verifiable evidence: refactored code, equivalence test, or example output",
+        "responded in English (matching the user's language)",
+        "did not skip ahead and give the final code without going through the gates"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "gate-enforcement-chinese-bugfix",
+      "prompt": "严格模式:修复这个 bug,当输入为空列表时程序崩溃\n\ndef calculate_average(numbers):\n    return sum(numbers) / len(numbers)",
+      "expected_output": "中文交互,诊断问题、提出修复方案并推荐、展示计划、实现并验证",
+      "files": [],
+      "expectations": [
+        "识别出空列表导致除零错误,提出至少一种修复方案(返回0/None/抛异常等),并推荐其中一种",
+        "展示了修复计划(添加检查、处理边界、测试等)",
+        "提供了证据:修复后的代码、空列表测试通过的证明、正常输入仍然工作的验证",
+        "使用中文回复",
+        "输出中包含三个 gate 的结构(Gate 1 方案、Gate 2 计划、Gate 3 证据),不是直接给修复代码"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "just-do-it-mode",
+      "prompt": "快速流程:just do it, add error handling to this API call\n\nresponse = requests.get(url)\ndata = response.json()",
+      "expected_output": "识别到 'just do it',压缩 Gate 1/2 但仍然提供 Gate 3 证据",
+      "files": [],
+      "expectations": [
+        "自行选择合理的错误处理方案(try-except/status check等),用一句话说明理由,不等待确认",
+        "简洁展示计划(如 bullet points),不等待用户批准",
+        "仍然提供了完整证据:修改后的代码、错误处理覆盖的场景、测试示例",
+        "识别出用户想快速推进的意图",
+        "Gate 3 的证据环节没有被跳过"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "gate-enforcement-shell-backup",
+      "prompt": "strict flow: 我需要一个 shell 脚本,备份 /var/log 目录到 /backup,保留最近 7 天的备份",
+      "expected_output": "中文交互,完整三 gate 流程,涉及系统操作需注意证据完整性",
+      "files": [],
+      "expectations": [
+        "提出了备份策略(tar/rsync/cp,日期命名,清理旧备份等),并推荐其中一种附带理由",
+        "展示了详细计划(创建备份、命名规则、清理逻辑等)",
+        "提供了证据:脚本文件内容、功能验证或 dry-run 输出",
+        "使用中文回复",
+        "涉及系统文件操作时,提及了安全性说明(如权限要求、dry-run 建议)"
+      ]
+    }
+  ]
+}

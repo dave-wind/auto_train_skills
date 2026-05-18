@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Training outputs (auto-generated, potentially large)
+skill-training-framework/workspaces/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Claude Code
+.claude/

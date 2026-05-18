@@ -1,0 +1,17 @@
+{
+  "skill_name": "__SKILL_NAME__",
+  "evals": [
+    {
+      "id": 1,
+      "name": "descriptive-test-name",
+      "prompt": "用户实际会输入的 prompt(真实、有上下文、有细节)",
+      "expected_output": "人类可读的成功标准描述",
+      "files": [],
+      "expectations": [
+        "可客观验证的断言 1",
+        "可客观验证的断言 2",
+        "可客观验证的断言 3"
+      ]
+    }
+  ]
+}

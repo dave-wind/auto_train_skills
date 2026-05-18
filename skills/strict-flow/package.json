@@ -1,0 +1,29 @@
+{
+  "name": "strict-flow",
+  "version": "1.0.0",
+  "description": "Lightweight three-gate workflow skill for AI coding agents (brainstorm → plan → verify)",
+  "bin": {
+    "strict-flow": "./install.js"
+  },
+  "files": [
+    "SKILL.md",
+    "agents/**",
+    "references/**",
+    "install.js"
+  ],
+  "keywords": [
+    "skill",
+    "codex",
+    "claude-code",
+    "ai-agent",
+    "workflow",
+    "brainstorm",
+    "verification"
+  ],
+  "author": "dave-wind",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dave-wind/strict-flow.git"
+  }
+}

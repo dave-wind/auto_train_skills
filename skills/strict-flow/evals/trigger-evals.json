@@ -1,0 +1,18 @@
+[
+  {"query": "我有个小 bug 要修,strict flow 走起", "should_trigger": true},
+  {"query": "快速流程帮我重构一下这个函数,把 for loop 改成 list comprehension", "should_trigger": true},
+  {"query": "strict mode: 我需要给这个 API 加个错误处理", "should_trigger": true},
+  {"query": "用严格模式帮我写个脚本备份日志文件", "should_trigger": true},
+  {"query": "I want to use quick flow to add type hints to this module", "should_trigger": true},
+  {"query": "lightweight workflow please, just need to fix this one test that's failing", "should_trigger": true},
+  {"query": "强制流程帮我搞一下这个 CSV 数据清洗脚本", "should_trigger": true},
+  {"query": "I have a small refactor, don't need the full ceremony, strict flow would be perfect", "should_trigger": true},
+  {"query": "帮我搭建一个完整的微服务架构,包括认证、网关、数据库迁移", "should_trigger": false},
+  {"query": "帮我从头开始做一个 React 项目,要包含路由、状态管理、和完整的 CI/CD", "should_trigger": false},
+  {"query": "详细分析一下这段代码的性能瓶颈,我需要完整的 profiling 报告", "should_trigger": false},
+  {"query": "帮我做一个 full code review of this PR, check for security issues, performance, and best practices", "should_trigger": false},
+  {"query": "我想重构整个项目的目录结构,从单体拆成 monorepo", "should_trigger": false},
+  {"query": "just read this file and tell me what it does", "should_trigger": false},
+  {"query": "帮我写个简单的 Python 函数算斐波那契数列", "should_trigger": false},
+  {"query": "我想用 superpowers 模式来做这个功能,要完整的 TDD 流程", "should_trigger": false}
+]

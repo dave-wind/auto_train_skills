@@ -1,0 +1,83 @@
+{
+  "skill_name": "content-rewriter",
+  "evals": [
+    {
+      "id": 1,
+      "name": "concise-rewrite-of-verbose-text",
+      "prompt": "帮我精简一下这段话：我们的产品团队经过长时间的市场调研和用户反馈收集之后，最终决定在下一个版本更新中对产品的核心功能进行全面而彻底的优化和升级，旨在提升用户的整体使用体验和满意度。",
+      "expected_output": "A concise rewrite that preserves the core meaning at roughly 60-70% of the original length.",
+      "files": [],
+      "expectations": [
+        "The response is entirely in Chinese",
+        "The rewritten text is noticeably shorter than the original while preserving the meaning that the product team will upgrade core features in the next version based on research",
+        "The rewritten text does not contain redundant phrases like '全面而彻底的' paired with '优化和升级'",
+        "No information from the original is fabricated or hallucinated in the rewrite"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "casual-rewrite-of-formal-text",
+      "prompt": "换个说法，让这段话更口语化：鉴于当前市场环境的不确定性，建议投资者采取审慎的态度，合理配置资产组合以降低潜在风险。",
+      "expected_output": "A casual, conversational rewrite suitable for social media or chat.",
+      "files": [],
+      "expectations": [
+        "The rewritten text uses everyday conversational Chinese rather than formal financial jargon",
+        "The core advice about being careful with investments due to market uncertainty is preserved",
+        "The tone is friendly and approachable, not academic or bureaucratic",
+        "The response does not include meta-commentary explaining what was changed — it just provides the rewrite"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "no-mode-specified-default-optimization",
+      "prompt": "帮我润色一下这段：今天天气很好所以我和朋友去了公园我们在那里看了花还拍了很多照片 потом пошли в кафе.",
+      "expected_output": "A general polish/optimization of mixed-language text with grammar and flow improvements.",
+      "files": [],
+      "expectations": [
+        "The response improves the grammar and punctuation of the original run-on sentence",
+        "Both the Chinese and Russian portions of the text are preserved in the rewrite",
+        "The rewritten version maintains the original meaning about going to the park, seeing flowers, taking photos, and then going to a cafe",
+        "The response does not demand clarification about the rewrite mode — it proceeds with a default optimization"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "expand-short-sentence-with-details",
+      "prompt": "扩写这句话：咖啡很好喝。",
+      "expected_output": "An expanded version roughly 150-200% the length with added sensory details and examples.",
+      "files": [],
+      "expectations": [
+        "The expanded text is noticeably longer than the original 6-character sentence",
+        "The rewrite adds sensory details (taste, aroma, appearance) or context that were not in the original",
+        "The response is in Chinese matching the input language",
+        "The original meaning (that the coffee is good) remains the central point of the expanded text"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "professional-rewrite-for-business-context",
+      "prompt": "把这个改得专业一点，我要放到商务报告里：我们搞了个新系统，速度比以前快了好多，客户都说好。",
+      "expected_output": "A professionally worded version suitable for a business report.",
+      "files": [],
+      "expectations": [
+        "The rewritten text replaces colloquial expressions like '搞了个' and '快了好多' with formal business language",
+        "The response uses a structured tone appropriate for a business or technical report",
+        "The three claims from the original are preserved: a new system was built, performance improved, and clients responded positively",
+        "The rewrite does not add specific fabricated metrics or percentages that were not in the original text"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "creative-rewrite-for-marketing-copy",
+      "prompt": "用创意风格重写这句话，我要做广告文案：我们的洗发水能让头发变顺滑。",
+      "expected_output": "A creative, marketing-oriented rewrite with vivid imagery and rhetorical flair.",
+      "files": [],
+      "expectations": [
+        "The rewritten text uses at least one metaphor, simile, or vivid image not present in the original",
+        "The core product claim (shampoo makes hair smooth) is preserved",
+        "The tone is energetic and persuasive, suitable for advertising",
+        "The response is in Chinese and does not exceed three sentences for the main rewrite"
+      ]
+    }
+  ]
+}

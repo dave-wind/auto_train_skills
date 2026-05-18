@@ -1,0 +1,74 @@
+[
+  {
+    "query": "帮我把这段话改写一下，换种表达方式",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我分析这段话的语法结构有没有问题",
+    "should_trigger": false
+  },
+  {
+    "query": "这段文案太啰嗦了，精简到一半长度",
+    "should_trigger": true
+  },
+  {
+    "query": "统计这段文案的字数和句数",
+    "should_trigger": false
+  },
+  {
+    "query": "让这段话更正式一些，我要放在报告里用",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我查一下这段报告里引用的数据是否准确",
+    "should_trigger": false
+  },
+  {
+    "query": "换个说法表达同一个意思，要口语化一点",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我翻译成英文，要地道的那种",
+    "should_trigger": false
+  },
+  {
+    "query": "润色一下这封邮件，感觉写得太随意了",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我校对这封邮件有没有错别字和标点错误",
+    "should_trigger": false
+  },
+  {
+    "query": "扩写一下这段产品描述，现在太单薄了客户没感觉",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我根据这段产品描述生成5条不同的广告标题",
+    "should_trigger": false
+  },
+  {
+    "query": "优化文案，让落地页转化率更高",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我做A/B测试对比这两版文案的数据表现",
+    "should_trigger": false
+  },
+  {
+    "query": "把这个技术文档改得让非技术人员也能看懂",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我写一份从零开始的技术文档，项目是新的还没有初稿",
+    "should_trigger": false
+  },
+  {
+    "query": "重写一下这个公告，语气太硬了，要温和一点",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我审核这个公告是否符合公司合规要求",
+    "should_trigger": false
+  }
+]
