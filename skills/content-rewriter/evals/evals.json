@@ -3,80 +3,80 @@
   "evals": [
     {
       "id": 1,
-      "name": "concise-rewrite-of-verbose-text",
-      "prompt": "帮我精简一下这段话：我们的产品团队经过长时间的市场调研和用户反馈收集之后，最终决定在下一个版本更新中对产品的核心功能进行全面而彻底的优化和升级，旨在提升用户的整体使用体验和满意度。",
-      "expected_output": "A concise rewrite that preserves the core meaning at roughly 60-70% of the original length.",
+      "name": "concise-remove-redundancy",
+      "prompt": "精简这段话：在这个充满着不确定性因素和复杂多变的市场环境之中，我们的团队通过深入细致的研究分析和全面系统的市场调研，最终得出了一个非常重要的结论，那就是我们需要在产品的核心功能层面进行一次彻底而全面的升级和改造，这样才能够真正有效地提升用户的使用体验，让用户在我们的平台上获得更加优质的服务体验和更加满意的使用感受。",
+      "expected_output": "A single concise rewrite with redundancy removed, delivered as plain text without formatting.",
       "files": [],
       "expectations": [
-        "The response is entirely in Chinese",
-        "The rewritten text is noticeably shorter than the original while preserving the meaning that the product team will upgrade core features in the next version based on research",
-        "The rewritten text does not contain redundant phrases like '全面而彻底的' paired with '优化和升级'",
-        "No information from the original is fabricated or hallucinated in the rewrite"
+        "Redundant paired expressions are collapsed into single concise phrases (e.g., '深入细致的'+'全面系统的' merged; '优质的'+'满意的' merged)",
+        "The response is a plain text paragraph with no markdown formatting (no bold, headers, or bullet points)",
+        "The response contains exactly one rewritten version with no labeled alternatives or meta-commentary",
+        "The core message is preserved: team research led to a decision to upgrade core features to improve user experience"
       ]
     },
     {
       "id": 2,
-      "name": "casual-rewrite-of-formal-text",
-      "prompt": "换个说法，让这段话更口语化：鉴于当前市场环境的不确定性，建议投资者采取审慎的态度，合理配置资产组合以降低潜在风险。",
-      "expected_output": "A casual, conversational rewrite suitable for social media or chat.",
+      "name": "expand-with-sensory-details",
+      "prompt": "扩写这段话：这家咖啡馆氛围不错，适合周末放松。",
+      "expected_output": "A single expanded rewrite with added sensory details, delivered as plain text without formatting.",
       "files": [],
       "expectations": [
-        "The rewritten text uses everyday conversational Chinese rather than formal financial jargon",
-        "The core advice about being careful with investments due to market uncertainty is preserved",
-        "The tone is friendly and approachable, not academic or bureaucratic",
-        "The response does not include meta-commentary explaining what was changed — it just provides the rewrite"
+        "The expansion adds concrete sensory or atmospheric details (lighting, smell, sound, decor) not in the original",
+        "The response is a plain text paragraph with no markdown formatting (no bold, headers, or bullet points)",
+        "The response provides exactly one rewritten version, not multiple labeled options to choose from",
+        "The central point (coffee shop, nice vibe, good for weekend relaxation) remains intact without adding unrelated content"
       ]
     },
     {
       "id": 3,
-      "name": "no-mode-specified-default-optimization",
-      "prompt": "帮我润色一下这段：今天天气很好所以我和朋友去了公园我们在那里看了花还拍了很多照片 потом пошли в кафе.",
-      "expected_output": "A general polish/optimization of mixed-language text with grammar and flow improvements.",
+      "name": "formal-multi-claim-text",
+      "prompt": "改成正式书面语，用于学术论文摘要：这个实验说实话一开始我们也没抱太大希望，结果一跑出来好家伙直接炸了，准确率比之前那几个方法高出一大截，而且跑起来贼快，基本上可以说是性价比拉满了，不过有个小问题就是内存占用有点夸张。",
+      "expected_output": "A single formal academic rewrite as a plain paragraph, converting all colloquial claims to academic language.",
       "files": [],
       "expectations": [
-        "The response improves the grammar and punctuation of the original run-on sentence",
-        "Both the Chinese and Russian portions of the text are preserved in the rewrite",
-        "The rewritten version maintains the original meaning about going to the park, seeing flowers, taking photos, and then going to a cafe",
-        "The response does not demand clarification about the rewrite mode — it proceeds with a default optimization"
+        "Every colloquial expression is replaced with academic language while preserving the original claims: high accuracy, fast speed, good cost-performance, and high memory usage as a drawback",
+        "The response is a plain text paragraph with no markdown formatting, no headers, no bullet points",
+        "The response provides exactly one rewrite without listing multiple versions or adding a 'changes made' summary",
+        "The quantitative and qualitative claims are preserved without fabricating specific numerical values"
       ]
     },
     {
       "id": 4,
-      "name": "expand-short-sentence-with-details",
-      "prompt": "扩写这句话：咖啡很好喝。",
-      "expected_output": "An expanded version roughly 150-200% the length with added sensory details and examples.",
+      "name": "casual-without-exaggerating",
+      "prompt": "用日常口语改写这段：本产品采用先进的纳米级分子渗透技术，通过深层滋养修复受损毛鳞片，实现从内到外的全面修复与长效保湿。",
+      "expected_output": "A single casual rewrite that simplifies jargon without exaggerating the original claims.",
       "files": [],
       "expectations": [
-        "The expanded text is noticeably longer than the original 6-character sentence",
-        "The rewrite adds sensory details (taste, aroma, appearance) or context that were not in the original",
-        "The response is in Chinese matching the input language",
-        "The original meaning (that the coffee is good) remains the central point of the expanded text"
+        "Technical terms are simplified to everyday language that a non-expert can understand without losing the basic meaning",
+        "The rewrite does not add claims not present in the original (no '永久修复', '神奇效果', '一用就好' type of exaggeration)",
+        "The response is exactly one casual rewrite without multiple labeled versions or meta-commentary about the simplification",
+        "The tone uses conversational patterns (e.g., '说白了就是', '简单来说') rather than remaining in marketing register"
       ]
     },
     {
       "id": 5,
-      "name": "professional-rewrite-for-business-context",
-      "prompt": "把这个改得专业一点，我要放到商务报告里：我们搞了个新系统，速度比以前快了好多，客户都说好。",
-      "expected_output": "A professionally worded version suitable for a business report.",
+      "name": "professional-plain-text",
+      "prompt": "改成商务报告风格：我们去年花了不少力气做市场推广，效果还不错，用户增长了很多，收入也跟着涨了不少。",
+      "expected_output": "A single professional business rewrite as a plain text paragraph, no invented numbers, no formatting.",
       "files": [],
       "expectations": [
-        "The rewritten text replaces colloquial expressions like '搞了个' and '快了好多' with formal business language",
-        "The response uses a structured tone appropriate for a business or technical report",
-        "The three claims from the original are preserved: a new system was built, performance improved, and clients responded positively",
-        "The rewrite does not add specific fabricated metrics or percentages that were not in the original text"
+        "Vague colloquial phrases are replaced with business terminology while preserving the original meaning",
+        "The rewrite does NOT contain fabricated specific numbers, percentages, or metrics that were not in the original text",
+        "The response is a plain text paragraph with no markdown formatting — no headers (no **标题**), no bullet points, no section labels",
+        "All three original claims are preserved: marketing investment, user growth, and revenue increase"
       ]
     },
     {
       "id": 6,
-      "name": "creative-rewrite-for-marketing-copy",
-      "prompt": "用创意风格重写这句话，我要做广告文案：我们的洗发水能让头发变顺滑。",
-      "expected_output": "A creative, marketing-oriented rewrite with vivid imagery and rhetorical flair.",
+      "name": "creative-punchy-single-output",
+      "prompt": "用创意广告风格重写：这款运动鞋很轻便，跑步的时候特别舒服。",
+      "expected_output": "A single creative marketing rewrite with vivid imagery, concise (under 3 sentences), no alternatives.",
       "files": [],
       "expectations": [
-        "The rewritten text uses at least one metaphor, simile, or vivid image not present in the original",
-        "The core product claim (shampoo makes hair smooth) is preserved",
-        "The tone is energetic and persuasive, suitable for advertising",
-        "The response is in Chinese and does not exceed three sentences for the main rewrite"
+        "The rewrite uses at least one vivid metaphor or imagery that goes beyond literally restating 'light' and 'comfortable'",
+        "The main rewrite is concise — no more than 2-3 sentences — like actual advertising copy, not a long-form article",
+        "The response provides exactly one compelling rewrite without multiple labeled options (no '版本一/版本二' or '感官流/戏剧型' style alternatives)",
+        "The core product benefit (lightweight, comfortable for running) is conveyed through the imagery rather than stated literally"
       ]
     }
   ]

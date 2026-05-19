@@ -305,6 +305,49 @@ make trigger-eval SKILL=xxx    # 触发率是否漂移？
 
 ## 九、深入阅读
 
+### 框架方法论文档
+
 - `skill-training-framework/docs/methodology.md` — 和 ML 训练的对照、迭代心态
 - `skill-training-framework/docs/writing-evals.md` — 怎么写好 expectations（附反模式）
 - `skill-training-framework/docs/debugging.md` — 常见问题排查
+
+### 实战案例文档
+
+- **`docs/content-rewriter-training-guide.md`** — 完整训练实战指南，以 content-rewriter 为例。包含：
+  - 知识点扫盲（Skill / Eval / Baseline / Grader / Delta / Iteration）
+  - 文件结构详解（evals.json、SKILL.md、grading JSON 每个字段解释）
+  - 完整实战流程（3 个阶段的真实数据：evals 太简单 → 发现 skill 有害 → 修复）
+  - Evals 设计最佳实践（好 eval vs 坏 eval、expectation 编写原则）
+  - SKILL.md 改进最佳实践（常见问题模式、改进前必读一手数据）
+  - 部署后 6 种模式的 before/after 对比测试
+  - 训练机制：`claude -p` 通过 `--append-system-prompt` 注入 SKILL.md
+
+### Skill 内部文档
+
+- `skills/content-rewriter/TRAINING-FEEDBACK.md` — 最新一轮训练的失败模式分析和改进建议
+- `skills/strict-flow/TRAINING-FEEDBACK.md` — strict-flow skill 的训练反馈
+
+---
+
+## 十、训练机制说明
+
+### `claude -p` 与 Skill 注入
+
+训练框架通过 `claude -p`（非交互管道模式）运行 eval，**不走** Claude Code 的 skill 自动发现系统。
+
+```
+with_skill:    claude -p "<eval prompt>" --append-system-prompt "<SKILL.md 全文>"
+without_skill: claude -p "<eval prompt>"
+```
+
+- `run_evals.py` 用 `--append-system-prompt` 将 `skills/<name>/SKILL.md` 的完整文本注入
+- `references/`、`agents/` 等子目录文件**不会**被注入训练——只有 SKILL.md 本身
+- A/B 对比完全可控：with_skill 一定有 SKILL.md，without_skill 一定没有
+
+### 训练 vs 部署的区别
+
+| 场景 | Skill 加载方式 | references/ 是否生效 |
+|------|--------------|-------------------|
+| `make train`（训练） | `--append-system-prompt` 显式注入 SKILL.md | 不生效 |
+| Claude Code 交互模式（部署后） | Claude Code 内部 skill 发现+触发系统 | 生效 |
+| `claude -p`（手动测试） | 依赖全局 `~/.claude/skills/` 中的 skill | 取决于 Claude Code 自动加载 |
